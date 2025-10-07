@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarked Queries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Bookmarked Queries</h1>
+            <p>Your saved questions and responses</p>
+            <button id="refresh-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer; margin-top: 1rem; font-weight: 600;">
+                🔄 Refresh Bookmarks
+            </button>
+        </div>
+
+        <div id="error-container"></div>
+        <div id="loading" class="loading" style="display: none;">Loading bookmarks</div>
+        <div id="bookmarks-container" class="bookmarks-grid"></div>
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+            </svg>
+            <h2>No Bookmarks Yet</h2>
+            <p>Your bookmarked queries will appear here</p>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="confirmation-modal">
+        <div class="confirmation-modal-content">
+            <div class="confirmation-modal-title">Confirm Deletion</div>
+            <div class="confirmation-modal-message">Are you sure you want to remove this bookmark? This action cannot be undone.</div>
+            <div class="confirmation-modal-buttons">
+                <button id="confirm-delete-btn" class="confirmation-modal-btn confirm">Yes, Remove</button>
+                <button id="cancel-delete-btn" class="confirmation-modal-btn cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
